@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enterprise Core - NishaTech CyberOps</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .carousel-slide { display: none; }
+        .carousel-slide.active { display: block; }
+        html { scroll-behavior: smooth; }
+        /* Chatbot widget scroller custom sizing */
+        .scrollbar-thin::-webkit-scrollbar { width: 4px; }
+        .scrollbar-thin::-webkit-scrollbar-track { background: #020617; }
+        .scrollbar-thin::-webkit-scrollbar-thumb { background: #1e1b4b; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased selection:bg-indigo-500/30">
+
+    <header class="border-b border-slate-800 bg-slate-900 px-6 py-4 flex justify-between items-center shadow-xl">
+        <div class="flex items-center space-x-3">
+            <div class="bg-gradient-to-tr from-indigo-600 to-violet-500 p-2.5 rounded-xl shadow-lg">
+                <i class="fas fa-shield-halved text-2xl text-white"></i>
+            </div>
+            <div>
+                <span class="font-black tracking-wider text-2xl text-white">NISHA<span class="text-indigo-500">TECH</span></span>
+                <span class="text-[10px] font-mono text-indigo-400 block tracking-widest uppercase -mt-1">CyberOps Core v2.5</span>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4">
+            <div class="hidden md:flex items-center space-x-2 bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-800 text-xs font-mono">
+                <span class="text-slate-500"><i class="fas fa-globe text-indigo-400 mr-1"></i> Language:</span>
+                <select class="bg-transparent border-none text-slate-300 text-xs focus:outline-none font-mono cursor-pointer">
+                    <option value="en" class="bg-slate-950">English</option>
+                    <option value="hi" class="bg-slate-950">हिन्दी (Hindi)</option>
+                </select>
+            </div>
+            
+            <a href="/logout" class="text-xs bg-rose-950/50 hover:bg-rose-900 border border-rose-800/80 text-rose-400 px-3 py-2 rounded-xl font-mono transition shadow-lg flex items-center space-x-1.5 cursor-pointer">
+                <i class="fas fa-power-off text-[10px]"></i>
+                <span>Secure Logout</span>
+            </a>
+
+            <span class="text-xs bg-emerald-950/80 text-emerald-400 border border-emerald-800/60 px-3 py-2 rounded-xl font-mono flex items-center shadow-inner">
+                <span class="flex h-2 w-2 rounded-full bg-emerald-400 mr-2 animate-pulse"></span>
+                Aicoo Node Active
+            </span>
+        </div>
+    </header>
+
+    <nav class="bg-indigo-900 border-b border-indigo-950 px-6 shadow-inner sticky top-0 z-50">
+        <ul class="flex flex-wrap items-center space-x-2 text-xs font-semibold tracking-wide text-indigo-100 font-mono">
+            <li><a href="#" class="px-4 py-3.5 hover:bg-indigo-800 block transition"><i class="fas fa-house mr-1"></i> Home</a></li>
+            <li><a href="#dispatch-section" class="px-4 py-3.5 hover:bg-indigo-800 block transition text-amber-300"><i class="fas fa-file-shield mr-1"></i> Register a Complaint</a></li>
+            <li><a href="javascript:void(0)" onclick="activateTrackerView()" class="px-4 py-3.5 hover:bg-indigo-800 block transition"><i class="fas fa-magnifying-glass mr-1"></i> Track Your Complaint</a></li>
+            <li><a href="/schemes" class="px-4 py-3.5 hover:bg-indigo-800 block transition"><i class="fas fa-building-columns mr-1"></i> Government All Scheme</a></li>
+            <li><a href="#laws-section" class="px-4 py-3.5 hover:bg-indigo-800 block transition"><i class="fas fa-gavel mr-1"></i> Laws</a></li>
+            <li><a href="#contact-section" class="px-4 py-3.5 hover:bg-indigo-800 block transition"><i class="fas fa-headset mr-1"></i> Contact Us</a></li>
+            
+            <li><a href="/logout" class="px-4 py-3.5 hover:bg-rose-900/60 text-rose-400 block transition font-bold border-l border-indigo-950"><i class="fas fa-sign-out-alt mr-1"></i> Logout</a></li>
+        </ul>
+    </nav>
+
+    <section class="relative w-full overflow-hidden bg-slate-900 border-b border-slate-800 h-44 md:h-52">
+        <div class="carousel-slide active h-full w-full relative transition-all duration-700">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=80" class="w-full h-full object-cover opacity-25 object-center" alt="Cyber Security">
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/60 to-transparent flex flex-col justify-center px-12">
+                <span class="text-xs font-mono font-bold text-indigo-400 uppercase tracking-widest mb-1">National Infrastructure Deployment</span>
+                <h2 class="text-xl md:text-2xl font-black text-white">Autonomous Citizen Grievance Architecture</h2>
+                <p class="text-xs text-slate-400 max-w-xl mt-1 hidden sm:block">Empowering cross-person network triage and AI-agent automation matrix systems to handle high priority exploits live.</p>
+            </div>
+        </div>
+        <div class="carousel-slide h-full w-full relative transition-all duration-700">
+            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1600&q=80" class="w-full h-full object-cover opacity-20 object-center" alt="Digital Scams">
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/70 to-transparent flex flex-col justify-center px-12">
+                <span class="text-xs font-mono font-bold text-rose-400 uppercase tracking-widest mb-1">Zero Trust Framework</span>
+                <h2 class="text-xl md:text-2xl font-black text-white">Mitigate Strategic Corporate Financial Fraud</h2>
+                <p class="text-xs text-slate-400 max-w-xl mt-1 hidden sm:block">Instantly trigger sandbox kernel sweeps to freeze active malicious injection links and protect operational databases.</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto p-6 space-y-8">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-slate-900/40 border border-slate-800/80 p-4 rounded-xl shadow-md">
+                <div class="flex justify-between items-start text-slate-400 text-xs font-mono uppercase mb-2">
+                    <span>Threat Mitigation Rate</span>
+                    <i class="fas fa-bolt text-indigo-400"></i>
+                </div>
+                <div class="text-2xl font-black text-white tracking-tight">99.84%</div>
+                <div class="text-[10px] text-emerald-400 mt-1 font-mono">Optimal Execution State</div>
+            </div>
+            <div class="bg-slate-900/40 border border-slate-800/80 p-4 rounded-xl shadow-md">
+                <div class="flex justify-between items-start text-slate-400 text-xs font-mono uppercase mb-2">
+                    <span>Active Agent Sandboxes</span>
+                    <div class="text-xl font-black text-white tracking-tight" id="sandboxCount">04</div>
+                </div>
+                <div class="text-[10px] text-slate-500 mt-1 font-mono">Dynamic Infrastructure</div>
+            </div>
+            <div class="bg-slate-900/40 border border-slate-800/80 p-4 rounded-xl shadow-md">
+                <div class="flex justify-between items-start text-slate-400 text-xs font-mono uppercase mb-2">
+                    <span>API Tunnels Active</span>
+                    <i class="fas fa-network-wired text-emerald-400"></i>
+                </div>
+                <div class="text-2xl font-black text-white tracking-tight">12 OpenCtx</div>
+                <div class="text-[10px] text-indigo-400 mt-1 font-mono">Secure Tunnel Protocols</div>
+            </div>
+            <div class="bg-slate-900/40 border border-slate-800/80 p-4 rounded-xl shadow-md">
+                <div class="flex justify-between items-start text-slate-400 text-xs font-mono uppercase mb-2">
+                    <span>Incidents Handled</span>
+                    <i class="fas fa-shield text-rose-500"></i>
+                </div>
+                <div class="text-2xl font-black text-white tracking-tight" id="incidentsBlocked">1,492</div>
+                <div class="text-[10px] text-rose-400 mt-1 font-mono">Live Sync Continuous</div>
+            </div>
+        </div>
+
+        <section class="space-y-4">
+            <h3 class="text-xs font-bold text-slate-400 font-mono uppercase tracking-widest flex items-center gap-2">
+                <i class="fas fa-layer-group text-indigo-400"></i> Select Intake Pipeline Channel
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition">
+                    <div class="relative h-28 bg-slate-950">
+                        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover opacity-30" alt="Women Safety">
+                        <span class="absolute top-3 right-3 bg-rose-950/80 text-rose-400 border border-rose-900 text-[9px] font-mono font-bold px-2 py-0.5 rounded-full">PRIORITY LAYER</span>
+                    </div>
+                    <div class="p-4 space-y-1.5 flex-1">
+                        <h4 class="font-bold text-white text-sm flex items-center gap-2"><i class="fas fa-user-shield text-rose-400"></i> Women & Children Crime</h4>
+                        <p class="text-xs text-slate-400">Report stalking, cyberbullying, or online abuse anonymously through secured encrypted channels.</p>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <button onclick="openComplaintRegistration('Women & Children Crime', true)" class="w-full text-center bg-rose-950/40 hover:bg-rose-900 text-rose-400 border border-rose-800/80 text-xs font-bold font-mono py-2 rounded-xl transition cursor-pointer">
+                            <i class="fas fa-user-secret mr-1"></i> REGISTER ANONYMOUSLY
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition">
+                    <div class="relative h-28 bg-slate-950">
+                        <img src="https://images.unsplash.com/photo-1621416894569-0f39ed31d247?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover opacity-30" alt="Financial Fraud">
+                        <span class="absolute top-3 right-3 bg-amber-950/80 text-amber-400 border border-amber-900 text-[9px] font-mono font-bold px-2 py-0.5 rounded-full">MONITORED</span>
+                    </div>
+                    <div class="p-4 space-y-1.5 flex-1">
+                        <h4 class="font-bold text-white text-sm flex items-center gap-2"><i class="fas fa-wallet text-amber-400"></i> Business & Financial Fraud</h4>
+                        <p class="text-xs text-slate-400">Report identity attacks, unauthorized UPI loops, ledger exploits, or commercial spoofing attempts.</p>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <button onclick="openComplaintRegistration('Business & Financial Fraud', false)" class="w-full text-center bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold font-mono py-2 rounded-xl transition shadow-md cursor-pointer">
+                            FILE COMMERCIAL FRAUD <i class="fas fa-chevron-right text-[9px] ml-0.5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition">
+                    <div class="relative h-28 bg-slate-950">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover opacity-30" alt="Other Crime">
+                        <span class="absolute top-3 right-3 bg-slate-800 text-slate-400 border border-slate-700 text-[9px] font-mono font-bold px-2 py-0.5 rounded-full">GENERAL</span>
+                    </div>
+                    <div class="p-4 space-y-1.5 flex-1">
+                        <h4 class="font-bold text-white text-sm flex items-center gap-2"><i class="fas fa-network-wired text-slate-300"></i> Other Cyber Crimes</h4>
+                        <p class="text-xs text-slate-400">File standard entries for website defacement, server crashes, phishing vectors, or online extortion strings.</p>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <button onclick="openComplaintRegistration('Other General Cyber Crime', false)" class="w-full text-center bg-slate-950 hover:bg-slate-900 text-slate-300 border border-slate-800 text-xs font-bold font-mono py-2 rounded-xl transition cursor-pointer">
+                            FILE GENERAL REPORT
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="trackerConsole" class="bg-slate-900/40 border border-slate-800 rounded-xl p-5 shadow-lg hidden">
+            <h3 class="text-sm font-bold text-indigo-400 uppercase font-mono tracking-wider mb-3"><i class="fas fa-satellite-dish mr-1 animate-pulse"></i> Live Incident Tracking Console</h3>
+            <div class="flex gap-3 mb-4">
+                <input type="text" id="searchTicketInput" placeholder="Enter National Ticket ID (e.g., NCRP-661898)" class="flex-1 bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm text-slate-200 focus:outline-none focus:border-indigo-500 font-mono">
+                <button onclick="executeLiveTracking()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 rounded-xl text-xs uppercase tracking-wider font-mono cursor-pointer transition">Query Track Matrix</button>
+            </div>
+            <div id="trackingOutput" class="bg-slate-950 border border-slate-850 p-4 rounded-xl text-xs font-mono text-emerald-400 leading-relaxed whitespace-pre shadow-inner">
+                System Idle. Awaiting reference ticket inputs to parse index logs...
+            </div>
+        </section>
+
+        <div id="dispatch-section" class="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-2">
+            <div class="space-y-6">
+                <div class="bg-slate-900/40 border border-slate-800/80 rounded-xl p-5 shadow-lg space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/60 pb-3">
+                        <h2 class="text-sm font-bold text-white uppercase tracking-wider flex items-center"><i class="fas fa-file-shield text-indigo-400 mr-2"></i> Cyber Crime Dispatch</h2>
+                        <span class="text-[10px] font-mono text-slate-500">Incident Registry</span>
+                    </div>
+                    <form id="incidentForm" class="space-y-4" onsubmit="return false;"></form>
+                        <div>
+                            <label class="block text-xs font-mono text-slate-400 mb-1">Incident Category:</label>
+                            <select id="incidentCategory" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs font-mono text-slate-300 focus:outline-none focus:border-indigo-500">
+                                <option value="financial">Financial Cyber Fraud</option>
+                                <option value="phishing">Phishing & Malicious Links</option>
+                                <option value="identity">Identity Theft & Impersonation</option>
+                                <option value="other">Other Cyber Crimes</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-mono text-slate-400 mb-1">Incident Diagnostic Description:</label>
+                            <textarea id="incidentInput" rows="4" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm text-slate-200 placeholder:text-slate-700 focus:outline-none focus:border-indigo-500 font-mono" placeholder="Provide complete threat narrative or paste logs..."></textarea>
+                        </div>
+                        <button type="button" id="submitBtn" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-xl text-xs uppercase tracking-wider transition">
+                            Process & Route Complaint
+                        </button>
+                    </form>
+                </div>
+
+                <div class="bg-slate-900/40 border border-slate-800/80 rounded-xl p-5 shadow-lg space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/60 pb-3">
+                        <h3 class="text-sm font-bold uppercase tracking-wider text-amber-400 flex items-center"><i class="fas fa-microchip mr-2"></i> Autonomous Sandbox Scan</h3>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Trigger automated cross-agent sweeps to analyze infrastructure clusters and isolate anomalies runtime.</p>
+                    <button id="scanBtn" class="w-full bg-slate-950 hover:bg-slate-900 border border-amber-500/40 hover:border-amber-500 text-amber-400 font-bold py-3 rounded-xl text-xs uppercase tracking-wider transition flex items-center justify-center space-x-2 cursor-pointer">
+                        <i class="fas fa-crosshairs text-xs"></i> <span>Execute Autonomous Deep Scan</span>
+                    </button>
+                    <div id="malwareLog" class="bg-slate-950 p-3 rounded-xl border border-slate-800 text-[11px] font-mono text-slate-500 hidden whitespace-pre-line leading-relaxed shadow-inner"></div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2 space-y-4">
+                <div class="bg-slate-900/40 border border-slate-800/80 rounded-xl p-4 shadow-lg">
+                    <h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-3 font-mono">Active Agent Mesh Nodes Topology</h3>
+                    <div class="grid grid-cols-3 gap-3">
+                        <div id="agent1" class="bg-slate-950 border border-slate-800 p-3 rounded-xl text-center font-mono">
+                            <i class="fas fa-brain text-indigo-400 mb-1 block text-lg"></i>
+                            <span class="text-xs text-white block font-bold">Triage Router</span>
+                            <span class="text-[9px] text-slate-600 block mt-1 uppercase" id="t1">Standby</span>
+                        </div>
+                        <div id="agent2" class="bg-slate-950 border border-slate-800 p-3 rounded-xl text-center font-mono">
+                            <i class="fas fa-envelope-shield text-emerald-400 mb-1 block text-lg"></i>
+                            <span class="text-xs text-white block font-bold">Mail Guard</span>
+                            <span class="text-[9px] text-slate-600 block mt-1 uppercase" id="t2">Standby</span>
+                        </div>
+                        <div id="agent3" class="bg-slate-950 border border-slate-800 p-3 rounded-xl text-center font-mono">
+                            <i class="fas fa-server text-amber-400 mb-1 block text-lg"></i>
+                            <span class="text-xs text-white block font-bold">Net Defender</span>
+                            <span class="text-[9px] text-slate-600 block mt-1 uppercase" id="t3">Standby</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ticketTracker" class="bg-slate-900/40 border border-slate-800/80 rounded-xl p-3 hidden font-mono text-xs">
+                    <div class="flex justify-between items-center bg-slate-950 border border-slate-850 p-3 rounded-xl">
+                        <div>
+                            <span class="text-slate-500 block text-[9px]">COMPLAINT TRACKING TICKET ID</span>
+                            <span id="lblTicket" class="text-white font-bold text-sm tracking-wider">NCRP-XXXXXX</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-slate-500 block text-[9px]">AI STATUS INDEX</span>
+                            <span id="lblSeverity" class="bg-rose-950 text-rose-400 border border-rose-900 px-2 py-0.5 rounded font-black text-[10px]">EVALUATING</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/40 border border-slate-800/80 rounded-xl p-4 shadow-lg">
+                    <div id="logContent" class="bg-slate-950 border border-slate-850 p-4 rounded-xl text-xs font-mono text-slate-500 text-center py-12 whitespace-pre-line leading-relaxed max-h-[220px] overflow-y-auto shadow-inner">
+                        <i class="fas fa-terminal text-slate-700 text-lg mb-1 block"></i>
+                        No active national cyber threat incident loaded. <br>Secure pipeline infrastructure awaiting payload routing...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="laws-section" class="bg-slate-900/40 border border-slate-800 rounded-xl p-5 space-y-3">
+            <h3 class="text-xs font-bold text-white font-mono uppercase tracking-widest border-b border-slate-800 pb-2"><i class="fas fa-shield-halved text-emerald-400 mr-1"></i> Cyber Safety Rules & Regulatory Handbook</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-[11px] font-mono leading-relaxed">
+                <div class="bg-slate-950 border border-slate-850 p-3 rounded-lg"><span class="text-emerald-400 font-bold block mb-0.5">01. Enforce Multi-Factor</span>Deploy cryptographically split MFA mechanisms across corporate user data lines to contain access exposure vector strings.</div>
+                <div class="bg-slate-950 border border-slate-850 p-3 rounded-lg"><span class="text-emerald-400 font-bold block mb-0.5">02. Incident Escalation</span>During financial identity leaks, route payloads inside the active registry immediately to freeze compromised bank loops.</div>
+                <div class="bg-slate-950 border border-slate-850 p-3 rounded-lg"><span class="text-emerald-400 font-bold block mb-0.5">03. Verification Protocol</span>Pass unverified URL paths or incoming attachment payloads directly inside automated agent networks for containment sandboxing.</div>
+                <div class="bg-slate-950 border border-slate-850 p-3 rounded-lg"><span class="text-emerald-400 font-bold block mb-0.5">04. Lawful Compliance</span>All routed transactions and system incident indices comply strictly with standard safe harbor provisions and central registry mandates.</div>
+            </div>
+        </section>
+
+        <section id="contact-section" class="bg-slate-900/40 border border-slate-800 rounded-xl p-6 space-y-6">
+            <div class="border-b border-slate-800 pb-3">
+                <h3 class="text-sm font-bold text-white font-mono uppercase tracking-widest flex items-center gap-2">
+                    <i class="fas fa-headset text-indigo-400"></i> Contact Us & Core Operations Control
+                </h3>
+                <p class="text-xs text-slate-400 font-mono mt-1">Get in touch directly with our localized infrastructure response centers or technical deployment cells.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-850 space-y-2">
+                    <div class="text-indigo-400 font-bold uppercase"><i class="fas fa-map-location-dot mr-1"></i> HQ Operations Node</div>
+                    <p class="text-slate-400 leading-relaxed">Ghaziabad Cluster Node Office,<br>Uttar Pradesh, India</p>
+                </div>
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-850 space-y-2">
+                    <div class="text-indigo-400 font-bold uppercase"><i class="fas fa-envelope-open-text mr-1"></i> Technical Line Contact</div>
+                    <p class="text-slate-400">Support Routing Protocol:<br><span class="text-white font-bold select-all">ops@nishatech.internal</span></p>
+                </div>
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-850 space-y-2">
+                    <div class="text-indigo-400 font-bold uppercase"><i class="fas fa-clock mr-1"></i> Monitoring Matrix Hours</div>
+                    <p class="text-slate-400">Network Telemetry Logs Map:<br><span class="text-emerald-400 font-bold">24x7 Continuous Stream Execution</span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 border-t border-slate-800 mt-12 px-6 py-8">
+        <div class="max-w-7xl mx-auto space-y-6">
+            <div class="bg-rose-950/40 border border-rose-900/80 rounded-2xl p-6 flex flex-col md:flex-row justify-between items-center gap-4 shadow-xl">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-rose-900 text-white p-3.5 rounded-xl text-2xl animate-pulse">
+                        <i class="fas fa-phone-volume"></i>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-mono text-rose-400 block font-bold tracking-widest uppercase">Immediate Emergency Escalation Channel</span>
+                        <h3 class="text-lg font-black text-white">National Cyber Fraud Incident Helpline</h3>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 w-full md:w-auto">
+                    <a href="tel:1930" class="flex-1 md:flex-initial text-center bg-rose-600 hover:bg-rose-500 text-white text-2xl font-black font-mono px-8 py-3 rounded-xl transition shadow-lg shadow-rose-600/20 tracking-wider flex items-center justify-center gap-3 cursor-pointer">
+                        <i class="fas fa-headset text-xl"></i> 1930
+                    </a>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row justify-between items-center text-[10px] font-mono text-slate-600 border-t border-slate-800/60 pt-4">
+                <span>© 2026 NishaTech Infrastructure Stack Core. All Rights Protected.</span>
+                <span class="text-slate-500">Designated Safe Harbor Sandbox Pipeline Routing Node</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- UPDATED: WORKING AI CYBER ASSISTANT WIDGET WITH MANUAL TYPING INPUT -->
+    <div id="aiChatbot" class="fixed bottom-24 right-6 w-80 bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col z-[10001] h-96 hidden">
+        <!-- Chat Header -->
+        <div class="bg-gradient-to-r from-indigo-600 to-violet-600 p-3 flex justify-between items-center shadow-md">
+            <div class="flex items-center space-x-2">
+                <div class="bg-slate-950/40 p-1.5 rounded-lg animate-pulse">
+                    <i class="fas fa-robot text-white text-sm"></i>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold text-white font-mono tracking-wide">AICOO CO-PILOT</h4>
+                    <span class="text-[9px] text-indigo-200 font-mono block">NishaTech Core Node</span>
+                </div>
+            </div>
+            <button onclick="toggleChatbot()" class="text-slate-300 hover:text-white transition text-xs cursor-pointer"><i class="fas fa-times"></i></button>
+        </div>
+
+        <!-- Chat Messages Screen -->
+        <div id="chatMessages" class="flex-1 p-3 overflow-y-auto space-y-3 text-xs font-mono scrollbar-thin bg-slate-950">
+            <div class="bg-slate-900 border border-slate-850 p-2.5 rounded-xl text-slate-300 max-w-[85%] leading-relaxed">
+                ⚡ <span class="text-indigo-400 font-bold">System Online.</span> Main NishaTech AI Agent Core hoon. Aap kisi bhi dynamic endpoint incident ko automate karne ke liye niche diye gaye query logs select kar sakte hain ya apna swayam ka query type kar sakte hain:
+            </div>
+        </div>
+
+        <!-- Quick Simulation Prompts -->
+        <div class="p-2 bg-slate-900 border-t border-slate-800 flex flex-wrap gap-1">
+            <button onclick="sendMockPrompt('Analyze active phishing vector')" class="text-[10px] bg-slate-950 hover:bg-slate-800 border border-slate-800 text-slate-300 px-2 py-1 rounded transition text-left cursor-pointer">🔍 Scan Phishing Link</button>
+            <button onclick="sendMockPrompt('Check system telemetry integrity')" class="text-[10px] bg-slate-950 hover:bg-slate-800 border border-slate-800 text-slate-300 px-2 py-1 rounded transition text-left cursor-pointer">🛡️ Core Health</button>
+            <button onclick="sendMockPrompt('Isolate commercial leakage node')" class="text-[10px] bg-slate-950 hover:bg-slate-800 border border-slate-800 text-slate-300 px-2 py-1 rounded transition text-left cursor-pointer">🚀 Isolate Leak</button>
+        </div>
+
+        <!-- NEWLY INJECTED TEXT TYPING BOX AND ACTION SUBMITTER -->
+        <div class="p-2 bg-slate-950 border-t border-slate-850 flex gap-2">
+            <input type="text" id="chatbotUserInput" onkeydown="if(event.key === 'Enter') handleUserTypedMessage()" placeholder="Type query or report threat..." class="flex-1 bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-indigo-500 font-mono placeholder:text-slate-600">
+            <button onclick="handleUserTypedMessage()" class="bg-indigo-600 hover:bg-indigo-500 text-white p-2 px-3 rounded-xl transition text-xs flex items-center justify-center cursor-pointer">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- TOGGLE CHAT BUTTON -->
+    <button onclick="toggleChatbot()" class="fixed bottom-6 right-6 bg-indigo-600 hover:bg-indigo-500 text-white p-4 rounded-full shadow-2xl transition-all duration-300 flex items-center justify-center text-lg z-[10001] hover:scale-110 shadow-indigo-600/20 cursor-pointer border border-indigo-500">
+        <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <div id="complaintModal" style="display:none;" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[10000] items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl w-full max-w-md shadow-2xl space-y-4">
+            <h3 id="modalTitle" class="text-base font-bold text-sky-400 font-mono border-b border-slate-800 pb-2 uppercase tracking-wide">Register Incident</h3>
+            <input type="hidden" id="modalCategory">
+            <div class="space-y-1.5">
+                <label class="block text-xs font-mono text-slate-400">Provide complete incident narrative / text payload:</label>
+                <textarea id="modalDescription" rows="4" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm text-slate-100 placeholder:text-slate-700 focus:outline-none focus:border-indigo-500 font-mono" placeholder="Paste security warnings, links or fraud statements..."></textarea>
+            </div>
+            <div class="flex justify-end gap-2 text-xs font-mono">
+                <button onclick="closeModal()" class="px-4 py-2 bg-slate-950 border border-slate-800 text-slate-400 hover:text-white rounded-lg transition cursor-pointer">Cancel</button>
+                <button onclick="submitComplaintForm()" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-lg transition cursor-pointer shadow-lg shadow-indigo-600/10">Process & Route Complaint</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Automatic Banner engine loop
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        setInterval(() => {
+            if(slides.length > 0) {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+        }, 4000);
+
+        // Open Modal Operations
+        function openComplaintRegistration(category, isAnonymous) {
+            document.getElementById('complaintModal').style.display = 'flex';
+            document.getElementById('modalCategory').value = category;
+            document.getElementById('modalTitle').innerText = isAnonymous ? "🔒 Secure Anonymous Filing" : "💼 Commercial Fraud Intake";
+            document.getElementById('modalDescription').value = "";
+        }
+        function closeModal() {
+            document.getElementById('complaintModal').style.display = 'none';
+        }
+
+        // POST Data Form pipeline to Server endpoints
+        async function submitComplaintForm() {
+            const category = document.getElementById('modalCategory').value;
+            const description = document.getElementById('modalDescription').value;
+            if(!description.trim()) return alert("Narrative cannot be empty.");
+
+            const res = await fetch('/api/register_complaint', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ category: category, description: description })
+            });
+            const data = await res.json();
+            closeModal();
+            alert(`COMPLAINT VECTOR GENERATED!\n\nTicket Reference: ${data.ticket_id}\nTarget Assigned: ${data.assigned_node}\nSeverity Block: ${data.severity}`);
+            
+            document.getElementById('incidentInput').value = `[${data.ticket_id}] Ref Category: ${category}\nPayload Context: ${description}`;
+            document.getElementById('incidentForm').scrollIntoView({behavior: 'smooth'});
+        }
+
+        function activateTrackerView() {
+            const tracker = document.getElementById('trackerConsole');
+            tracker.classList.remove('hidden');
+            tracker.scrollIntoView({behavior: 'smooth'});
+        }
+
+        async function executeLiveTracking() {
+            const ticketId = document.getElementById('searchTicketInput').value.trim();
+            const output = document.getElementById('trackingOutput');
+            if(!ticketId) return output.innerText = "ERROR: Please specify a valid Ticket Code.";
+
+            output.innerHTML = `> Querying central mesh directories for telemetry block [${ticketId}]...`;
+            setTimeout(async () => {
+                const res = await fetch(`/api/track_complaint/${ticketId}`);
+                const resData = await res.json();
+                if(resData.found) {
+                    output.innerHTML = `<span class="text-sky-400">[DATA INTEGRITY SYNCED]</span>\n---------------------------------------\n• Reference Code : ${ticketId}\n• Input Category : ${resData.data.category}\n• Active Agent   : <span class="text-amber-400">${resData.data.assigned_node}</span>\n• Operational Blk: <span class="text-emerald-400">${resData.data.status}</span>\n• Severity Vector: [${resData.data.severity}]\n• Captured String: "${resData.data.description}"`;
+                } else {
+                    output.innerHTML = `<span class="text-rose-500">[ACCESS FAULT]</span> Specified ticket registry context was not found.`;
+                }
+            }, 1000);
+        }
+
+        // --- CHATBOT CONTROLLERS INTEGRATION ---
+        function toggleChatbot() {
+            const chat = document.getElementById('aiChatbot');
+            chat.classList.toggle('hidden');
+        }
+
+        // NEW FUNCTION: Handles custom text input typing
+        function handleUserTypedMessage() {
+            const inputField = document.getElementById('chatbotUserInput');
+            const text = inputField.value.trim();
+            if (!text) return;
+
+            inputField.value = ''; // Input clear karo
+            sendMockPrompt(text);
+        }
+
+        function sendMockPrompt(promptText) {
+            const chatMessages = document.getElementById('chatMessages');
+            
+            const userHtml = `<div class="bg-indigo-950/50 border border-indigo-900/60 p-2.5 rounded-xl text-indigo-200 max-w-[85%] ml-auto text-right tracking-wide">${promptText}</div>`;
+            chatMessages.innerHTML += userHtml;
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            let aiResponse = "Analyzing custom intelligence threat logs...";
+            const lowerText = promptText.toLowerCase();
+
+            // Intelligent static fallback system for dynamic demo
+            if(lowerText.includes('phishing') || lowerText.includes('link') || lowerText.includes('scan')) {
+                aiResponse = `⚠️ <b>[PHISHING INTRUSION ALERT]</b><br>• Target: URL parameter stream.<br>• Mitigation: Triggered Aicoo infrastructure handoff.<br>• Status: Active routing to Mail Guard sandbox node completed. Threat score reduced to zero.`;
+            } else if(lowerText.includes('telemetry') || lowerText.includes('health') || lowerText.includes('status')) {
+                aiResponse = `✅ <b>[CORE INTEGRITY REPORT]</b><br>• System State: Stable.<br>• Telemetry Logs: 100% Synced.<br>• Aicoo Network Node Connection: Active and authentic. Secure session persists.`;
+            } else if(lowerText.includes('leakage') || lowerText.includes('isolate') || lowerText.includes('hack')) {
+                aiResponse = `🔒 <b>[ISOLATION COMMAND EXECUTED]</b><br>• Action: Commercial Ledger leak contained.<br>• Execution: Port blockages applied via sandbox script loop.<br>• Result: Financial matrix isolated successfully.`;
+            } else if(lowerText.includes('hello') || lowerText.includes('hi')) {
+                aiResponse = `👋 Hello! Main NishaTech Core Agent Network hoon. Aap dashboard par data flows secure karne ya threats trace karne ke liye mujhse sahayata le sakte hain.`;
+            } else {
+                aiResponse = `🤖 <b>[PROCESSED USER PAYLOAD]</b><br>• Received Matrix Line: "${promptText}"<br>• Action: Analyzing query structure. Core telemetry nodes par report successfully log kar di gayi hai!`;
+            }
+
+            setTimeout(() => {
+                const aiHtml = `<div class="bg-slate-900 border border-slate-800 p-2.5 rounded-xl text-emerald-400 max-w-[85%] leading-relaxed border-l-2 border-emerald-500">🤖 <b>Aicoo Co-Pilot:</b><br>${aiResponse}</div>`;
+                chatMessages.innerHTML += aiHtml;
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 600);
+        }
+    </script>
+    <script>
+    document.getElementById('submitBtn').addEventListener('click', function() {
+        const btn = document.getElementById('submitBtn');
+        btn.innerText = 'ROUTING THROUGH MESH...';
+        
+        setTimeout(() => {
+            // Triage Router update
+            const t1 = document.getElementById('t1');
+            t1.innerText = 'ACTIVE';
+            t1.style.color = '#818cf8'; // Indigo
+            t1.style.fontWeight = 'bold';
+
+            // Mail Guard update
+            const t2 = document.getElementById('t2');
+            t2.innerText = 'SCANNING';
+            t2.style.color = '#34d399'; // Emerald
+            t2.style.fontWeight = 'bold';
+
+            // Net Defender update
+            const t3 = document.getElementById('t3');
+            t3.innerText = 'DEFENDING';
+            t3.style.color = '#fbbf24'; // Amber
+            t3.style.fontWeight = 'bold';
+            
+            alert("Incident Processed! Aicoo Agents have mitigated the threat.");
+            btn.innerText = 'Process & Route Complaint';
+        }, 1500);
+    });
+</script>
+</body>
+</html>
